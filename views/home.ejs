@@ -3,6 +3,11 @@
     <h1>Home</h1>
     <p><%= para %></p>
     
-    <% console.log(posts); %>
+    <% posts.forEach(function(posts){ %>
+        <h2><%= posts.title %></h2>
+        
+        <p><%= posts.content.substring(0 ,100) + "..." %></p>  
+        <a href="/posts/<%=posts.title%>">Read here</a>
+    <% }); %>
 
 <%- include("partials/footer"); -%>
